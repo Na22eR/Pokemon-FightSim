@@ -1,0 +1,20 @@
+{
+"trainer": 
+[
+	{
+		"name": "Gary",
+		"pokemon1": "Pikachu",
+		"pokemon2": "Test1",
+		"pokemon3": "Test2",
+		"pokemon4": "Test3"
+	},
+	{
+		"name": "Test",
+		"pokemon1": "Pikachu",
+		"pokemon2": "Test1",
+		"pokemon3": "Test2",
+		"pokemon4": "Test3"
+	}
+	
+]
+}

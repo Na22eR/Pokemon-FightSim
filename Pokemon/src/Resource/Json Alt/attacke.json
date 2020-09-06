@@ -1,0 +1,28 @@
+{
+
+"attacke":
+[
+	{
+		"name": "Elektroball",
+		"typ": 4,
+		"dmg": 10
+	},
+	{
+		"name": "Test1",
+		"typ": 4,
+		"dmg": 10
+	},
+	{
+		"name": "Test2",
+		"typ": 4,
+		"dmg": 10
+	},
+	{
+		"name": "Test3",
+		"typ": 4,
+		"dmg": 10
+	}
+	
+]
+
+}

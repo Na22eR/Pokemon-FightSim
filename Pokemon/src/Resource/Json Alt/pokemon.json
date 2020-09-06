@@ -1,0 +1,64 @@
+{
+
+"pokemon":
+[
+	{
+		"name": "Pikachu",
+		"hp": 142,
+		"typ": 4,
+		"res1": 4,
+		"res2": 6,
+		"res3": 0,
+		"wk1": 10,
+		"wk2": 0,
+		"atk1": "Elektroball", 
+		"atk2": "Test1",
+		"atk3": "Test2",
+		"atk4": "Test3"
+	},
+	{
+		"name": "Test2",
+		"hp": 142,
+		"typ": 4,
+		"res1": 4,
+		"res2": 6,
+		"res3": 0,
+		"wk1": 10,
+		"wk2": 0,
+		"atk1": "Elektroball", 
+		"atk2": "Test1",
+		"atk3": "Test2",
+		"atk4": "Test3"
+	},
+	{
+		"name": "Test3",
+		"hp": 142,
+		"typ": 4,
+		"res1": 4,
+		"res2": 6,
+		"res3": 0,
+		"wk1": 10,
+		"wk2": 0,
+		"atk1": "Elektroball", 
+		"atk2": "Test1",
+		"atk3": "Test2",
+		"atk4": "Test3"
+	},
+	{
+		"name": "Test4",
+		"hp": 142,
+		"typ": 4,
+		"res1": 4,
+		"res2": 6,
+		"res3": 0,
+		"wk1": 10,
+		"wk2": 0,
+		"atk1": "Elektroball", 
+		"atk2": "Test1",
+		"atk3": "Test2",
+		"atk4": "Test3"
+	}
+	
+]
+
+}
