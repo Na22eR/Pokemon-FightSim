@@ -13,7 +13,7 @@ public class Runde {
 		r1.daten.cGegner();
 		r1.daten.cTeam();
 		//r1.rundeTry();
-		
+		//Moin
 	
 	}
 	
