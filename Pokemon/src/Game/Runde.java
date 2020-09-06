@@ -11,6 +11,7 @@ public class Runde {
 		
 		Runde r1 = new Runde();
 		r1.daten.cGegner();
+		r1.daten.cPokemon();
 		r1.daten.cTeam();
 		//r1.rundeTry();
 		
@@ -25,7 +26,7 @@ public class Runde {
 		System.out.println("Waehle dein Pokemon: ");
 		for(int i = 0; i < daten.team.length; i++) {
 			if(daten.team[i].hp > 0) {
-				System.out.println(i+ ". " + daten.team[i].getPkmName() + "\t" +  "HP: " + daten.team[i].getPkmHp() );
+				System.out.println(i + ". " + daten.team[i].getPkmName() + "\t" +  "HP: " + daten.team[i].getPkmHp() );
 			}
 		}
 		
