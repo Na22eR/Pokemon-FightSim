@@ -13,7 +13,7 @@ public class Runde {
 		r1.daten.cGegner();
 		r1.daten.cTeam();
 		//r1.rundeTry();
-	
+		//Test
 	
 	}
 	
@@ -95,7 +95,7 @@ public class Runde {
 		if(y.typ == z.typ) {
 			System.out.println(inUse.name + "setzt" + y.name + "ein.");
 			z.hp -= y.dmg;
-			if(z.hp <= 0) { System.out.println(z.name + " hat keine Leben mehr und kann nicht mehr weiter kämpfen."); }
+			if(z.hp <= 0) { System.out.println(z.name + " hat keine Leben mehr und kann nicht mehr weiter kÃ¤mpfen."); }
 		}
 		
 	}
@@ -144,7 +144,7 @@ public class Runde {
 	}
 	
 	boolean analyse() {
-	//�berpr�ft pb noch Pokemon am Leben sind	
+	//Überprüft pb noch Pokemon am Leben sind	
 		
 		boolean EP = (daten.team[1].hp > 0 || daten.team[2].hp > 0 || daten.team[3].hp > 0 || daten.team[4].hp > 0);
 		boolean GP = (daten.gegner[daten.gNr].pokemon1.hp > 0 || daten.gegner[daten.gNr].pokemon2.hp > 0 || daten.gegner[daten.gNr].pokemon3.hp > 0 || daten.gegner[daten.gNr].pokemon4.hp > 0);
@@ -166,7 +166,7 @@ public class Runde {
 		if(mrd > 0.2 && mrd <= 0.4) {spruch = "Mehr Glueck als Verstand und doch gewonnen, und so jemand nennt sich Trainer...";}
 		if(mrd > 0.4 && mrd <= 0.6) {spruch = "Schluss mit lustig, naechstes mal lege ich erst richtig los...";}
 		if(mrd > 0.6 && mrd <= 0.8) {spruch = "Du hast gut gekaempft ich sollte erst noch mehr trainieren bevor ich wieder gegen dich antrete...";}
-		if(mrd > 0.8 && mrd <= 1.0) {spruch = "Ich sehe schon mein Reserveteam reicht nicht gegen dich aus, doch nächstes mal ist die erste Klasse dran... ";}
+		if(mrd > 0.8 && mrd <= 1.0) {spruch = "Ich sehe schon mein Reserveteam reicht nicht gegen dich aus, doch nÃ¤chstes mal ist die erste Klasse dran... ";}
 		System.out.println("Herzlichen Glueckwunsch, du hast " + daten.gegner[daten.gNr].name + " besiegt!"); 
 		System.out.println(daten.gegner[daten.gNr].name + ": " + spruch);
 	
@@ -190,7 +190,7 @@ public class Runde {
 		
 		int ausw;
 		
-		System.out.println("WÃ¤hle dein Pokemon: ");
+		System.out.println("WÃƒÂ¤hle dein Pokemon: ");
 		for(int i = 0; i < daten.team.length; i++) {
 			if(daten.team[i].hp > 0) {
 				System.out.println(i+ ". " + daten.team[i].getPkmName() + "\t" +  "HP: " + daten.team[i].getPkmHp() );
@@ -206,7 +206,7 @@ public class Runde {
 		
 		Pokemon x = auswP();
 		
-		System.out.println("WÃ¤hle deine Attacke: ");
+		System.out.println("WÃƒÂ¤hle deine Attacke: ");
 		for(int i = 0; i < 5; i++) {
 			System.out.println(i+ ". " + x.attck1.name);
 		}
@@ -240,20 +240,20 @@ public class Runde {
 			System.out.println(inUse.name + "setzt" + y.name + "ein.");
 			System.out.println("Nicht sehr Effektiv!");
 			z.hp -= (y.dmg/2);
-			if(z.hp <= 0) { System.out.println(z.name + " hat keine Leben mehr und kann nicht mehr weiter kÃ¤mpfen."); }
+			if(z.hp <= 0) { System.out.println(z.name + " hat keine Leben mehr und kann nicht mehr weiter kÃƒÂ¤mpfen."); }
 		}
 		
 		if(y.typ == z.wk1 || y.typ == z.wk2) {
 			System.out.println(inUse.name + "setzt" + y.name + "ein.");
 			System.out.println("Sehr Effektiv!");
 			z.hp -= (y.dmg*2);
-			if(z.hp <= 0) { System.out.println(z.name + " hat keine Leben mehr und kann nicht mehr weiter kÃ¤mpfen."); }
+			if(z.hp <= 0) { System.out.println(z.name + " hat keine Leben mehr und kann nicht mehr weiter kÃƒÂ¤mpfen."); }
 		}
 		
 		if(y.typ == z.typ) {
 			System.out.println(inUse.name + "setzt" + y.name + "ein.");
 			z.hp -= y.dmg;
-			if(z.hp <= 0) { System.out.println(z.name + " hat keine Leben mehr und kann nicht mehr weiter kÃ¤mpfen."); }
+			if(z.hp <= 0) { System.out.println(z.name + " hat keine Leben mehr und kann nicht mehr weiter kÃƒÂ¤mpfen."); }
 		}
 		
 	}
@@ -312,11 +312,11 @@ public class Runde {
 		double mrd = Math.random();
 		String spruch = "";
 		if(mrd > 0.0 && mrd <= 0.2) {spruch = "Dieses mal hast du gewonnen, doch die Rache wird mein sein...";}		
-		if(mrd > 0.2 && mrd <= 0.4) {spruch = "Mehr GlÃ¼ck als Verstand und doch gewonnen, und so jemand nennt sich Trainer...";}
-		if(mrd > 0.4 && mrd <= 0.6) {spruch = "Schluss mit lustig, nÃ¤chstes mal lege ich erst richtig los...";}
-		if(mrd > 0.6 && mrd <= 0.8) {spruch = "Du hast gut gekÃ¤mpft ich sollte erst noch mehr trainieren bevor ich wieder gegen dich antrete...";}
-		if(mrd > 0.8 && mrd <= 1.0) {spruch = "Ich sehe schon mein Reserveteam reicht nicht gegen dich aus, doch nÃ¤chstes mal ist die erste Klasse dran... ";}
-		System.out.println("Herzlichen GlÃ¼ckwunsch, du hast " + daten.gegner[daten.gNr].name + " besiegt!"); 
+		if(mrd > 0.2 && mrd <= 0.4) {spruch = "Mehr GlÃƒÂ¼ck als Verstand und doch gewonnen, und so jemand nennt sich Trainer...";}
+		if(mrd > 0.4 && mrd <= 0.6) {spruch = "Schluss mit lustig, nÃƒÂ¤chstes mal lege ich erst richtig los...";}
+		if(mrd > 0.6 && mrd <= 0.8) {spruch = "Du hast gut gekÃƒÂ¤mpft ich sollte erst noch mehr trainieren bevor ich wieder gegen dich antrete...";}
+		if(mrd > 0.8 && mrd <= 1.0) {spruch = "Ich sehe schon mein Reserveteam reicht nicht gegen dich aus, doch nÃƒÂ¤chstes mal ist die erste Klasse dran... ";}
+		System.out.println("Herzlichen GlÃƒÂ¼ckwunsch, du hast " + daten.gegner[daten.gNr].name + " besiegt!"); 
 		System.out.println(daten.gegner[daten.gNr].name + ": " + spruch);
 	
 	}
@@ -324,11 +324,11 @@ public class Runde {
 	void Verloren() {
 		double mrd = Math.random();
 		String spruch = "";
-		if(mrd > 0.0 && mrd <= 0.2) {spruch = "Netter Versuch, du solltest dich nÃ¤chstes mal mehr anstrengen wenn du gewinnen willst...";}		
+		if(mrd > 0.0 && mrd <= 0.2) {spruch = "Netter Versuch, du solltest dich nÃƒÂ¤chstes mal mehr anstrengen wenn du gewinnen willst...";}		
 		if(mrd > 0.2 && mrd <= 0.4) {spruch = "Mach erst mal die Besics bevor du mich wieder herausforderst...";}
-		if(mrd > 0.4 && mrd <= 0.6) {spruch = "Das war ja klar, wieder nur ein Neuling der denkt er kÃ¶nne mich besiegen...";}
+		if(mrd > 0.4 && mrd <= 0.6) {spruch = "Das war ja klar, wieder nur ein Neuling der denkt er kÃƒÂ¶nne mich besiegen...";}
 		if(mrd > 0.6 && mrd <= 0.8) {spruch = "Hochmut kommt vor dem Fall, Anfangs denken alle sie haben eine Chance...";}
-		if(mrd > 0.8 && mrd <= 1.0) {spruch = "Ãbung macht den Meister und wie ich sehe hast du davon noch zu wenig...";}
+		if(mrd > 0.8 && mrd <= 1.0) {spruch = "ÃƒÂœbung macht den Meister und wie ich sehe hast du davon noch zu wenig...";}
 		System.out.println("Oh nein, du wurdest von " + daten.gegner[daten.gNr].name + " besiegt");
 		System.out.println(daten.gegner[daten.gNr].name + ": " + spruch);
 		
