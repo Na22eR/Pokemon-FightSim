@@ -92,7 +92,7 @@ public class Runde {
 		}
 		
 		//If Case-Effective
-		if(y.typ == inUseG.wk1 || y.typ == inUseG.wk2) {
+		else if(y.typ == inUseG.wk1 || y.typ == inUseG.wk2) {
 			System.out.println(inUse.name + " setzt " + y.name + " ein.");
 			System.out.println("Sehr Effektiv!");
 			inUseG.hp -= (y.dmg*2);
@@ -139,7 +139,7 @@ public class Runde {
 		}
 		
 		//If Case-Effective
-		if(y.typ == z.wk1 || y.typ == z.wk2) {
+		else if(y.typ == z.wk1 || y.typ == z.wk2) {
 			System.out.println(inUseG.name + " setzt " + y.name + " ein.");
 			System.out.println("Sehr Effektiv!");
 			if(z.hp <= 0) {System.out.println("Oh nein, " + z.name + " wurde besiegt, du kannst es jetzt nicht mehr verwenden... "); }

@@ -42,7 +42,7 @@ public class Source {
 	Pokemon Shiggy  = new Pokemon("Shiggy", 151, 3, 3, 2, 12, 5, 4, Aquaknarre, Aquawelle, Biss, Turbodreher );
 	
 	Trainer Trainer1 = new Trainer("Gary    ", Bisasam, Glumanda, Shiggy, Bisasam);	
-	Trainer Trainer2 = new Trainer("Richie  ", Pikachu);
+	Trainer Trainer2 = new Trainer("Richie  ", Bisasam, Bisasam, Bisasam, Bisasam);
 	Trainer Trainer3 = new Trainer("Harrison", Bisasam);
 	Trainer Trainer4 = new Trainer("Morrison", Pikachu);
 	Trainer Trainer5 = new Trainer("Tyson   ", Bisasam);
@@ -92,7 +92,7 @@ public class Source {
 		nl();
 		System.out.println("Dein Gegner ist: " + gegner[gNr].getTrName() );
 		System.out.println("Team des Gegners: ");
-		System.out.println("1." + gegner[gNr].pokemon1.getPkmName() + " 2." + gegner[gNr].pokemon2.getPkmName() + " 3." + gegner[gNr].pokemon3.getPkmName() + " 4." + gegner[gNr].pokemon4.getPkmName());
+		//System.out.println("1." + gegner[gNr].pokemon1.getPkmName() + " 2." + gegner[gNr].pokemon2.getPkmName() + " 3." + gegner[gNr].pokemon3.getPkmName() + " 4." + gegner[gNr].pokemon4.getPkmName());
 		nl2();
 		
 	}
