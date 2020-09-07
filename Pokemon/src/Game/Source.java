@@ -91,6 +91,8 @@ public class Source {
 		gNr = readInt("Nummer des gewünschten Gegners: ")-1; 
 		nl();
 		System.out.println("Dein Gegner ist: " + gegner[gNr].getTrName() );
+		System.out.println("Team des Gegners: ");
+		System.out.println("1." + gegner[gNr].pokemon1.getPkmName() + " 2." + gegner[gNr].pokemon2.getPkmName() + " 3." + gegner[gNr].pokemon3.getPkmName() + " 4." + gegner[gNr].pokemon4.getPkmName());
 		nl2();
 		
 	}
