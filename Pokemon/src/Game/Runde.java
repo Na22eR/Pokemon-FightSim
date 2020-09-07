@@ -13,7 +13,7 @@ public class Runde {
 		r1.daten.cGegner();
 		r1.daten.cPokemon();
 		r1.daten.cTeam();
-		//r1.rundeTry();
+		r1.rundeTry();
 		
 	
 	}
@@ -23,15 +23,21 @@ public class Runde {
 		
 		int ausw;
 		
+		//Gibt das aktuelle Pokemon des Gegners aus
+		System.out.println(daten.gegner[daten.gNr].getTrName() + " verwendet gerade: " + auswPG().getPkmName() );
+		daten.nl();
+		
 		System.out.println("Waehle dein Pokemon: ");
 		for(int i = 0; i < daten.team.length; i++) {
 			if(daten.team[i].hp > 0) {
-				System.out.println(i + ". " + daten.team[i].getPkmName() + "\t" +  "HP: " + daten.team[i].getPkmHp() );
+				System.out.println(i+1 + ". " + daten.team[i].getPkmName() + "\t" +  "HP: " + daten.team[i].getPkmHp() );
 			}
 		}
 		
-		ausw = readInt("Deine Auswahl: (1/2/3/4)");
+		ausw = readInt("Deine Auswahl: ")-1;
 		inUse = daten.team[ausw];
+		System.out.println("Ausgewählt: " + inUse.getPkmName() ); 
+		daten.nl();
 		return daten.team[ausw];
 	}
 	

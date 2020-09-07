@@ -69,8 +69,8 @@ public class Source {
 	
 	
 	void cGegner() {
-	//Befüllen des Gegner-Arrays
 		
+		//Befüllen des Gegner-Arrays
 		gegner [0] = Trainer1; gegner [1] = Trainer2; gegner [2] = Trainer3; 
 		gegner [3] = Trainer4; gegner [4] = Trainer5; gegner [5] = Trainer6; 
 		gegner [6] = Trainer7; gegner [7] = Trainer8; gegner [8] = Trainer9; 
@@ -90,7 +90,7 @@ public class Source {
 
 		gNr = readInt("Nummer des gewünschten Gegners: ")-1; 
 		nl();
-		System.out.println("Dein Gegner: " + gegner[gNr].getTrName() );
+		System.out.println("Dein Gegner ist: " + gegner[gNr].getTrName() );
 		nl2();
 		
 	}
