@@ -9,9 +9,18 @@ public class Runde {
 	Pokemon inUseG;
 	
 	public static void main(String args [] ) {
-		Runde r1 = new Runde();
-		r1.EinzelSp();
+		System.out.println("Willkommen im Pokemon-Kampf-Simulator!");
 		
+		if(readInt("Möchtest du den 1 oder den 2 Spieler-Modus spielen: ") == 1) {
+			Runde r1 = new Runde();
+			r1.daten.nl2();
+			r1.EinzelSp();
+		}
+		else {
+			Runde r1 = new Runde();
+			r1.daten.nl2();
+			r1.ZweiSp();
+		}
 	
 	}
 	
@@ -45,10 +54,10 @@ public class Runde {
 		
 		System.out.println("Waehle deine Attacke oder Wechsle dein Pokemon: ");
 		System.out.println(inUse.getPkmName() + "     HP: " +  inUse.getPkmHp());
-		System.out.println("1. " + inUse.attck1.name + "\t" + inUse.attck1.dmg + "\t" +  "Typ: " + inUse.attck1.printTyp() );
-		System.out.println("2. " + inUse.attck2.name);
-		System.out.println("3. " + inUse.attck3.name);
-		System.out.println("4. " + inUse.attck4.name);
+		System.out.println("1. " + inUse.attck1.name + "\t" + "Dmg: " + inUse.attck1.dmg + "\t" +  "Typ: " + inUse.attck1.printTyp() );
+		System.out.println("2. " + inUse.attck2.name + "\t" + "Dmg: " + inUse.attck2.dmg + "\t" +  "Typ: " + inUse.attck2.printTyp() );
+		System.out.println("3. " + inUse.attck3.name + "\t" + "Dmg: " + inUse.attck3.dmg + "\t" +  "Typ: " + inUse.attck3.printTyp() );
+		System.out.println("4. " + inUse.attck4.name + "\t" + "Dmg: " + inUse.attck4.dmg + "\t" +  "Typ: " + inUse.attck4.printTyp() );
 		System.out.println("5. Pokemon wechseln");
 		
 		int y = readInt("Nummer der Aktion: "); 
@@ -145,33 +154,48 @@ public class Runde {
 		if(y.typ == z.res1 || y.typ == z.res2 || y.typ == z.res3) {
 			System.out.println(inUseG.name + " setzt " + y.name + " ein.");
 			System.out.println("Nicht sehr Effektiv!");
-			if(z.hp <= 0) {System.out.println("Oh nein, " + z.name + " wurde besiegt, du kannst es jetzt nicht mehr verwenden... "); }
 			z.hp -= (y.dmg/2);
 			daten.nl2();
+			if(z.hp <= 0) {
+				System.out.println("Oh nein, " + z.name + " wurde besiegt, du kannst es jetzt nicht mehr verwenden... "); 
+				daten.nl2();
+				if(analyseEP() == false){	Verloren();	}
+				else { inUse = auswP(); }
+			}
 		}
 		
 		//If Case-Effective
 		else if(y.typ == z.wk1 || y.typ == z.wk2) {
 			System.out.println(inUseG.name + " setzt " + y.name + " ein.");
 			System.out.println("Sehr Effektiv!");
-			if(z.hp <= 0) {System.out.println("Oh nein, " + z.name + " wurde besiegt, du kannst es jetzt nicht mehr verwenden... "); }
 			z.hp -= (y.dmg*2);
-			daten.nl2();
+			daten.nl();
+			if(z.hp <= 0) {
+				System.out.println("Oh nein, " + z.name + " wurde besiegt, du kannst es jetzt nicht mehr verwenden... "); 
+				daten.nl2();
+				if(analyseEP() == false){	Verloren();	}
+				else { inUse = auswP(); }
+			}	
 		}
 		
 		//Else Case-Normal
 		else{
 			System.out.println(inUseG.name + " setzt " + y.name + " ein.");
-			if(z.hp <= 0) {System.out.println("Oh nein, " + z.name + " wurde besiegt, du kannst es jetzt nicht mehr verwenden... "); }
 			z.hp -= y.dmg;
 			daten.nl2();
+			if(z.hp <= 0) {
+				System.out.println("Oh nein, " + z.name + " wurde besiegt, du kannst es jetzt nicht mehr verwenden... "); 
+				daten.nl2();
+				if(analyseEP() == false){	Verloren();	}
+				else { inUse = auswP(); }	
+			}
 		}
 	}
 	
 	boolean analyse() {
 	//Ueberprueft ob noch Pokemon am Leben sind	
 		
-		boolean EP = (daten.team[1].hp > 0 || daten.team[2].hp > 0 || daten.team[3].hp > 0 || daten.team[4].hp > 0);
+		boolean EP = (daten.team[0].hp > 0 || daten.team[1].hp > 0 || daten.team[2].hp > 0 || daten.team[3].hp > 0);
 		boolean GP = (daten.gegner[daten.gNr].pokemon1.hp > 0 || daten.gegner[daten.gNr].pokemon2.hp > 0 || daten.gegner[daten.gNr].pokemon3.hp > 0 || daten.gegner[daten.gNr].pokemon4.hp > 0);
 		return (EP && GP);
 	}
@@ -181,7 +205,11 @@ public class Runde {
 	}
 	
 	boolean analyseEP() {
-		return (daten.team[1].hp > 0 || daten.team[2].hp > 0 || daten.team[3].hp > 0 || daten.team[4].hp > 0);
+		return (daten.team[0].hp > 0 || daten.team[1].hp > 0 || daten.team[2].hp > 0 || daten.team[3].hp > 0);
+	}
+	
+	boolean analyseG2() {
+		return (daten.teamG[0].hp > 0 || daten.teamG[1].hp > 0 || daten.teamG[2].hp > 0 || daten.teamG[3].hp > 0);
 	}
 	
 	void Sieg() {
@@ -214,20 +242,38 @@ public class Runde {
 		daten.cPokemon();
 		daten.cTeam();
 		inUse = daten.team[0];
-		rundeTry();
+		ISpRunde();
+	}
+	
+	void ZweiSp() {
+		daten.cPokemon();
+		daten.cTeam();
+		daten.cTeamG();
+		inUse = daten.team[0];
+		inUseG = daten.team[0];
+		IISpRunde();
 	}
 	
 	
 	
 	
-	void rundeTry() {
+	void ISpRunde() {
 		
 		angriff();
 		if(analyseGP() == true) {	angriffG();	}
 		else { Sieg(); }
-		if(analyseEP() == false){	Verloren();	}
-		if(analyse()   == true) {	rundeTry();	}
+		if(analyse()   == true) {	ISpRunde();	}
 		
 	}
+	
+void IISpRunde() {
+		
+		angriff();
+		if(analyseGP() == true) {	angriffG();	}
+		else { Sieg(); }
+		if(analyse()   == true) {	IISpRunde();	}
+		
+	}
+	
 	
 }

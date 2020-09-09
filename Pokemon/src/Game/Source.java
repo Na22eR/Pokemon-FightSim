@@ -11,30 +11,34 @@ public class Source {
 		
 	//Erstellen des Team Arrays
 	Pokemon team [] = new Pokemon [4];
+	
+	//Erstellen des 2. Team Arrays
+	Pokemon teamG [] = new Pokemon [4];
 		
 	//Erstellen des Eigenen Spielers & zuweisen der Team-Slots den Pokemon-Slots
-	Trainer Trainer0 = new Trainer("Ashe", team[0], team[1], team[2], team[3]);
+	Trainer TrainerE; 
+	Trainer TrainerG; 
 	
 	//Erstellen des Pokemon Arrays
 	Pokemon pokemons [] = new Pokemon [4];
 	
 	Attacke Wechsel = 		new Attacke("Pokemon Wechseln");
-	Attacke Elektroball = 	new Attacke("Elektroball", 4, 10, 1.0);
-	Attacke Donnerschock = 	new Attacke("Donnerschock", 4, 30, 1.0);
-	Attacke Donnerwelle = 	new Attacke("Donnerwelle", 4, 20, 0.9);
-	Attacke Funkensprung = 	new Attacke("Funkensprung", 4, 20, 1.0 );
-	Attacke Rankenhieb = 	new Attacke("Rankenhieb", 5, 25, 1.0);
-	Attacke Rasierblatt = 	new Attacke("Rasierblatt", 5, 25, 0.95);
-	Attacke Solarstrahl = 	new Attacke("Solarstrahl", 5, 10, 1.0);
-	Attacke Giftpuder = 	new Attacke("Giftpuder", 8, 35, 0.75);
-	Attacke Glut = 			new Attacke("Glut", 2, 25, 1.0);
-	Attacke Flammenblitz = 	new Attacke("Flammenblitz", 2, 15, 1.0);
-	Attacke Feuerodem = 	new Attacke("Feuerodem", 15, 20, .10);
-	Attacke Schlitzer = 	new Attacke("Schlitzer", 1, 20, 1.0);
-	Attacke Aquaknarre = 	new Attacke("Aquaknarre", 3, 25, 1.0);
-	Attacke Aquawelle = 	new Attacke("Aquawelle", 3, 20, 1.0);
-	Attacke Biss = 			new Attacke("Biss", 1, 25, 1.0);
-	Attacke Turbodreher = 	new Attacke("Turbodreher", 1, 40, 1.0);
+	Attacke Elektroball = 	new Attacke("Elektroball   ", 4, 10, 1.0);
+	Attacke Donnerschock = 	new Attacke("Donnerschock  ", 4, 30, 1.0);
+	Attacke Donnerwelle = 	new Attacke("Donnerwelle   ", 4, 20, 0.9);
+	Attacke Funkensprung = 	new Attacke("Funkensprung  ", 4, 20, 1.0 );
+	Attacke Rankenhieb = 	new Attacke("Rankenhieb    ", 5, 25, 1.0);
+	Attacke Rasierblatt = 	new Attacke("Rasierblatt   ", 5, 25, 0.95);
+	Attacke Solarstrahl = 	new Attacke("Solarstrahl   ", 5, 10, 1.0);
+	Attacke Giftpuder = 	new Attacke("Giftpuder     ", 8, 35, 0.75);
+	Attacke Glut = 			new Attacke("Glut          ", 2, 25, 1.0);
+	Attacke Flammenblitz = 	new Attacke("Flammenblitz  ", 2, 15, 1.0);
+	Attacke Feuerodem = 	new Attacke("Feuerodem     ", 15, 20, 1.0);
+	Attacke Schlitzer = 	new Attacke("Schlitzer     ", 1, 20, 1.0);
+	Attacke Aquaknarre = 	new Attacke("Aquaknarre    ", 3, 25, 1.0);
+	Attacke Aquawelle = 	new Attacke("Aquawelle     ", 3, 20, 1.0);
+	Attacke Biss = 			new Attacke("Biss          ", 1, 25, 1.0);
+	Attacke Turbodreher = 	new Attacke("Turbodreher   ", 1, 40, 1.0);
 	
 	Trainer Trainer1 = new Trainer("Gary    ", Bisasam(), Glumanda(), Shiggy(), Bisasam() );	
 	Trainer Trainer2 = new Trainer("Richie  ", Bisasam(), Bisasam(), Bisasam(), Bisasam() );
@@ -100,8 +104,11 @@ public class Source {
 	
 	void cTeam() {
 		
+		//Erstellen des Trainers für Spieler-1
+		TrainerE = new Trainer(readLine("Wähle nun deinen Trainer-Namen: "), team[0], team[1], team[2], team[3]);
+		
 		//Ausgabe der möglichen Pokemon
-		System.out.println("Stelle aus folgenden Pokemon dein 4-köpfiges Team zusammen!");
+		System.out.println("Stelle nun aus folgenden Pokemon dein 4-köpfiges Team zusammen!");
 		System.out.println("Zur Auswahl stehen:");
 		
 		for(int i = 1; i <= pokemons.length; i++) {
@@ -124,12 +131,50 @@ public class Source {
 		
 		
 		//Ausgabe des Teams
-		System.out.println("Dein Team: ");
+		System.out.println("Team-" + TrainerE.name + ": ");
 		for(int i = 1; i <= team.length; i++) {
 			System.out.println(i + "." + team[i-1].getPkmName() );
 		}
 		nl2();
-			
+		
+		
+	}
+	
+void cTeamG() {
+		
+		//Erstellen des Trainers für Spieler-1
+		TrainerG = new Trainer(readLine("Wähle nun den Trainer-Namen für Spieler 2: "), teamG[0], teamG[1], teamG[2], teamG[3]);	
+	
+		//Ausgabe der möglichen Pokemon
+		System.out.println("Stelle aus folgenden Pokemon dein 4-köpfiges Team zusammen!");
+		System.out.println("Zur Auswahl stehen:");
+		
+		for(int i = 1; i <= pokemons.length; i++) {
+			System.out.print(i + "." + pokemons[i-1].getPkmName()  + "\t");
+			if(  (i%4) == 0) { nl(); }		
+		}
+		nl();
+		
+		
+		//Zusammenstellen des Teams
+		for(int i = 0; i < teamG.length; i++) {
+			switch (readInt("Nummer des " + (i+1) + ".Pokemon: ") ) {
+				case 1: teamG[i]=Pikachu(); break;
+				case 2: teamG[i]=Bisasam(); break;
+				case 3: teamG[i]=Glumanda(); break;
+				case 4: teamG[i]=Shiggy(); break;
+			}
+		}
+		nl();
+		
+		
+		//Ausgabe des Teams
+		System.out.println("Team-" + TrainerG.name + ": ");
+		for(int i = 1; i <= teamG.length; i++) {
+			System.out.println(i + "." + teamG[i-1].getPkmName() );
+		}
+		nl2();
+		
 	}
 	
 	Pokemon Pikachu() {
