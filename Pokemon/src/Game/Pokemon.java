@@ -4,6 +4,8 @@ public class Pokemon {
 
 	String name;
 	int hp;
+	int ag;
+	int df;
 	int typ;
 	int res1;
 	int res2;
@@ -14,11 +16,14 @@ public class Pokemon {
 	Attacke attck2;
 	Attacke attck3;
 	Attacke attck4;
+	Attacke attck5;
 	
 	
-	Pokemon(String n, int h, int t, int r1, int r2, int r3, int w1, int w2, Attacke atk1, Attacke atk2, Attacke atk3, Attacke atk4){
+	Pokemon(String n, int h, int a, int d, int t, int r1, int r2, int r3, int w1, int w2, Attacke atk1, Attacke atk2, Attacke atk3, Attacke atk4, Attacke atk5){
 		name = n;
 		hp = h;
+		ag = a;
+		df = d;
 		typ = t;
 		res1 = r1;
 		res2 = r2;
@@ -29,6 +34,7 @@ public class Pokemon {
 		attck2 = atk2;
 		attck3 = atk3;
 		attck4 = atk4;
+		attck5 = atk5;
 	}
 	
 	
