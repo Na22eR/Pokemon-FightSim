@@ -109,9 +109,9 @@ public class Runde {
 			
 		int ausw = readInt("Deine Auswahl: ")-1;
 		
-		System.out.println("Ausgewählt: " + daten.team[ausw].getPkmName() ); 
+		System.out.println("Ausgewählt: " + daten.teamG[ausw].getPkmName() ); 
 		daten.nl();
-		return daten.team[ausw];
+		return daten.teamG[ausw];
 	}
 
 	void angriff() {
@@ -236,7 +236,7 @@ public class Runde {
 				System.out.println("Du hast " + inUseG.name + " besiegt! "); 
 				daten.nl2();
 				if(analyseSp2() == false){	 Ende2Sp(daten.TrainerG, daten.TrainerE);	}
-				else { inUseG = auswP(); }
+				else { inUseG = auswPSp2(); }
 			}
 		}
 			
@@ -250,7 +250,7 @@ public class Runde {
 				System.out.println("Du hast " + inUseG.name + " besiegt! "); 
 				daten.nl2();
 				if(analyseSp2() == false){   Ende2Sp(daten.TrainerG, daten.TrainerE);	}
-				else { inUseG = auswP(); }
+				else { inUseG = auswPSp2(); }
 			}
 		}
 			
@@ -263,7 +263,7 @@ public class Runde {
 				System.out.println("Du hast " + inUseG.name + " besiegt! "); 
 				daten.nl2();
 				if(analyseSp2() == false) {   Ende2Sp(daten.TrainerG, daten.TrainerE); 	}
-				else { inUseG = auswP(); }
+				else { inUseG = auswPSp2(); }
 			}
 		}
 			
@@ -333,7 +333,7 @@ public class Runde {
 		//Waehlt die Attacke fuer den naechsten Zug	
 			
 			//Gibt das aktuelle Pokemon des Gegners aus
-			System.out.println(daten.TrainerG.name + " verwendet gerade: " + inUseG.name + "     HP: " + inUseG.name );
+			System.out.println(daten.TrainerG.name + " verwendet gerade: " + inUseG.name + "     HP: " + inUseG.hp );
 			daten.nl();
 			
 			System.out.println("Waehle deine Attacke oder Wechsle dein Pokemon: ");
@@ -361,7 +361,7 @@ public class Runde {
 		//Waehlt die Attacke fuer den naechsten Zug	
 			
 			//Gibt das aktuelle Pokemon des Gegners aus
-			System.out.println(daten.TrainerE.name + " verwendet gerade: " + inUse.name + "     HP: " + inUse.name );
+			System.out.println(daten.TrainerE.name + " verwendet gerade: " + inUse.name + "     HP: " + inUse.hp );
 			daten.nl();
 			
 			System.out.println("Waehle deine Attacke oder Wechsle dein Pokemon: ");
@@ -471,7 +471,7 @@ public class Runde {
 		daten.cTeam();
 		daten.cTeamG();
 		inUse = daten.team[0];
-		inUseG = daten.team[0];
+		inUseG = daten.teamG[0];
 		IISpRunde();
 	}
 	
@@ -485,7 +485,6 @@ public class Runde {
 	void IISpRunde() {
 		angriffSp1();
 		if(analyseSp2() == true) { angriffSp2(); }
-		else { Ende2Sp(daten.TrainerG, daten.TrainerE); }
 		if(analyse2Sp()   == true) { IISpRunde(); }
 	}
 	
